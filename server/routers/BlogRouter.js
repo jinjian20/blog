@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const  {genid, db} = require('../db/DbUtils')
+const TimestampToTime = require('../utils/time')
 
 router.get('/search', async(req, res) => {
   let {keyword, categoryId, page, pageSize} = req.query
@@ -39,6 +40,11 @@ router.get('/search', async(req, res) => {
 
   let searchResult = await db.async.all(searchSql, searchParams)
   let searchCount = await db.async.all(searchCountSql, searchCountParams)
+
+  searchResult.rows.forEach((item) => {
+    item.create_time = TimestampToTime(item.create_time)
+  })
+ 
 
   if (searchResult.err === null || searchCount.err === null) {
     res.send({
