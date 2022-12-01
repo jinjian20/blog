@@ -1,8 +1,8 @@
 /*
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-01 22:10:56
- * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2022-11-22 21:36:16
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-11-30 21:17:53
  * @FilePath: /blog/client/src/router/routes.ts
  * @Description: 路由
  */
@@ -14,6 +14,14 @@ export default [
   {
     path: '/login',
     component: () => import('@/views/Login.vue')
+  },
+  {
+    path: '/details',
+    component: () => import('@/views/Details.vue'),
+  },
+  {
+    path: '/category',
+    component: () => import('@/views/Category.vue'),
   },
   {
     path: '/dashboard',

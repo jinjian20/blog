@@ -1,8 +1,8 @@
 <!--
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-23 12:27:54
- * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2022-11-23 14:54:52
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-12-01 13:18:06
  * @FilePath: /blog/client/src/components/Header.vue
  * @Description: 头部
 -->
@@ -23,7 +23,7 @@
         </span>
         首页
       </a>
-      <a href="/dashboard/category">
+      <a href="/category">
         <span class="action">
           <n-icon>
             <DiamondOutline />	
