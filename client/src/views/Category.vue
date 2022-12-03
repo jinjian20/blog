@@ -2,7 +2,7 @@
  * @Author: error: git config user.name && git config user.email & please set dead value or install git
  * @Date: 2022-11-30 21:08:21
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-11-30 21:43:29
+ * @LastEditTime: 2022-12-03 10:30:10
  * @FilePath: /blog/client/src/views/category.vue
  * @Description: 分类
 -->
@@ -14,7 +14,7 @@
         <div
           class="category-card-body-item"
           v-for="item in categoryOptions">
-          <h2>{{ item.name }}</h2>
+          <h2>{{ item['name'] }}</h2>
         </div>
       </div>
     </div>
