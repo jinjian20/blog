@@ -1,8 +1,8 @@
 <!--
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-02 21:13:59
- * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2022-11-14 19:41:48
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-12-05 15:32:01
  * @FilePath: /blog/client/src/views/Login.vue
  * @Description: 登录
 -->
@@ -34,7 +34,6 @@
 <script lang="ts" setup>
 import { login } from '../api/login'
 import { AdminStore } from '../store/AdminStore'
-import { useRouter } from 'vue-router'
 
 const adminStore = AdminStore()
 const message = inject<any>('message')

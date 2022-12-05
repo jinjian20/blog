@@ -2,7 +2,7 @@
  * @Author: error: git config user.name && git config user.email & please set dead value or install git
  * @Date: 2022-11-27 12:59:57
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-11-30 21:01:03
+ * @LastEditTime: 2022-12-05 15:32:02
  * @FilePath: /blog/client/src/views/dashboard/Details.vue
  * @Description: 文章详情页
 -->
@@ -17,7 +17,6 @@
 
 <script setup lang="ts">
 import { detailBlog } from '../api/blog'
-import { useRoute } from 'vue-router'
 import BgHeader from '@/components/BgHeader.vue'
 
 const route = useRoute()
