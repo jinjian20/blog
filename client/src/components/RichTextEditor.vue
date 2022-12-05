@@ -1,8 +1,8 @@
 <!--
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-15 19:57:48
- * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2022-11-16 16:20:30
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-12-05 11:59:08
  * @FilePath: /blog/client/src/components/RichEditor.vue
  * @Description: 富文本组件
 -->
@@ -29,7 +29,6 @@
 import '@wangeditor/editor/dist/css/style.css'
 import { IEditorConfig } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
-import src from 'vueuc/lib/virtual-list/src';
 
 // 编辑器实例
 const editorRef = shallowRef()

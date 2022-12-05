@@ -1,8 +1,8 @@
 /*
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-01 20:44:18
- * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2022-11-08 15:41:51
+ * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
+ * @LastEditTime: 2022-12-04 21:13:49
  * @FilePath: /blog/client/src/main.ts
  * @Description: 配置
  */
@@ -12,8 +12,30 @@ import App from './App.vue'
 import { createPinia } from 'pinia'
 import router from './router/index'
 import api from './utils/request'
-import naive from 'naive-ui'
 import { createDiscreteApi } from 'naive-ui'
+import {
+  // create naive ui
+  create,
+  // component
+  NButton,
+  NCheckbox,
+  NIcon,
+  NPagination,
+  NCard,
+  NForm,
+  NFormItem,
+  NInput,
+  NSpace,
+  NDataTable,
+  NModal,
+  NTabPane,
+  NSelect,
+  NTabs
+} from 'naive-ui'
+
+const naive = create({
+  components: [NButton, NCheckbox, NIcon, NPagination, NCard, NForm, NInput, NSpace, NDataTable, NModal, NFormItem, NTabPane, NSelect, NTabs]
+})
 
 const { message, notification, dialog } = createDiscreteApi(['message', 'dialog', 'notification'])
 const app = createApp(App)
