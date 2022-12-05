@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-22 20:42:20
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-05 16:01:27
+ * @LastEditTime: 2022-12-05 22:38:01
  * @FilePath: /blog/client/src/views/HomePage.vue
  * @Description: 首页
 -->
@@ -16,9 +16,9 @@
       </div>
       <span class="action">
         <n-icon :size="30">
-          <a href="#down">
+          <div @click="handleScrollTo">
             <ChevronDownOutline />	
-          </a>
+          </div>
         </n-icon>
       </span>
     </div>
@@ -40,8 +40,7 @@
               分类{{ item.category }}
             </span>
           </div>
-          <div class="home-cantainer-card-summary">
-            {{ item.content }}
+          <div class="home-cantainer-card-summary" v-html="item.content">
         </div>
       </div>
       <div class="home-cantainer-page">
@@ -69,7 +68,6 @@ import {
   FileTrayFullOutline,
  } from '@vicons/ionicons5'
 import Header from '../components/Header.vue'
-import { getCategory } from '../api/category'
 import { getBlog } from '../api/blog'
 
 type Page = {
@@ -80,7 +78,6 @@ type Page = {
 const router = useRouter()
 let blogList = ref()
 let count = ref<number>()
-let categoryOptions = ref([])
 const msg = inject<any>('message')
 const pageInfo = reactive({
   page: 1,
@@ -96,6 +93,15 @@ const handleToDetail = (id: string) => {
   router.push({
     path: '/details',
     query: {id}
+  })
+}
+
+// 滚动到指定位置
+const handleScrollTo = () => {
+  const PageId = document.querySelector('#down') as HTMLElement
+  window.scrollTo({
+    'top': PageId.offsetTop,
+    'behavior': 'smooth'
   })
 }
 
@@ -116,18 +122,6 @@ const getBlogList = async(query: Page) => {
     msg.error(err.msg)
   } 
 }
-
-// 获取分类
-const getCatefory = async() => {
-  const res = await getCategory()
-  categoryOptions.value = res.data.map((el: any) => {
-    return {
-      label: el.name,
-      value: el.id
-    }
-  })
-}
-
 </script>
 <style scoped lang="scss">
 .home {
@@ -161,6 +155,7 @@ const getCatefory = async() => {
 
   &-cantainer {
     height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,7 +164,6 @@ const getCatefory = async() => {
 
     &-card {
       width: 100%;
-      height: 140px;
       margin-top: 20px;
       text-align: center;
       background-color: #fff;
@@ -193,10 +187,9 @@ const getCatefory = async() => {
       &-summary {
         font-size: 14px;
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        line-height: 2;
-        -webkit-line-clamp: 2;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
       }
 
       &-meta {
@@ -218,9 +211,8 @@ const getCatefory = async() => {
     }
 
     &-page {
-      // position: absolute;
-      // bottom: 20px;
-      // left: 40%;
+      position: absolute;
+      bottom: 10px;
     }
   }
 
@@ -247,10 +239,7 @@ const getCatefory = async() => {
   cursor: pointer;
   transition: all 1s;
   animation: jump .5s ease-in-out infinite alternate;
-
-  a {
-    color: #fff9;
-  }
+  color: #fff9;
 }
 
 @keyframes jump {

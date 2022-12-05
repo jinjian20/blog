@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-19 16:07:42
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-11-23 21:07:46
+ * @LastEditTime: 2022-12-05 21:36:27
  * @FilePath: /blog/client/src/api/blog.ts
  * @Description: 日志
  */
@@ -57,5 +57,5 @@ export const deleteBlog = (query: Blog.Detail) => {
 }
 
 export const updateBlog = (params: Blog.AddBlogReq) => {
-  return api.put<Blog.blogRes>(`/blog/update`, params)
+  return api.put<Blog.blogRes>(`/blog/_token/update`, params)
 }

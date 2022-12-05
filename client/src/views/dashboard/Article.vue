@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-08 17:24:23
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-11-27 16:20:25
+ * @LastEditTime: 2022-12-05 21:40:19
  * @FilePath: /blog/client/src/views/dashboard/Article.vue
  * @Description: 文章管理
 -->
@@ -57,7 +57,6 @@
         </n-form>
       </n-tab-pane>
     </n-tabs>
-    {{ addArticle.content }}
   </div>
 </template>
 

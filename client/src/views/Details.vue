@@ -2,7 +2,7 @@
  * @Author: error: git config user.name && git config user.email & please set dead value or install git
  * @Date: 2022-11-27 12:59:57
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-05 15:32:02
+ * @LastEditTime: 2022-12-05 22:19:50
  * @FilePath: /blog/client/src/views/dashboard/Details.vue
  * @Description: 文章详情页
 -->
@@ -10,7 +10,7 @@
   <BgHeader :title="addArticle.title"/>
   <div class="details">
     <div class="details-content">
-      <div class="details-content-word">{{addArticle.content}}</div>
+      <div class="details-content-word" v-html="addArticle.content"></div>
    </div>
   </div>
 </template>
@@ -49,6 +49,7 @@ const getDetailBlog = async(id: any) => {
   
   &-content {
     height: 100vh;
+    padding: 20px;
     background: #fff;
     border: 1px solid #fff;
     border-radius: 8px;
