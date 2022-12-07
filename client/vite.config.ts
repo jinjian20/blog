@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-01 20:44:18
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-07 10:37:55
+ * @LastEditTime: 2022-12-07 21:20:27
  * @FilePath: /blog/client/vite.config.ts
  * @Description: 配置
  */
@@ -23,6 +23,9 @@ export default (({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, 'src')
       }
+    },
+    optimizeDeps: {
+      include: ['@kangc/v-md-editor/lib/theme/vuepress.js'],
     },
     plugins: [
       vue(),

@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-15 19:57:48
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-05 11:59:08
+ * @LastEditTime: 2022-12-07 21:57:58
  * @FilePath: /blog/client/src/components/RichEditor.vue
  * @Description: 富文本组件
 -->
@@ -26,9 +26,13 @@
 </template>
 
 <script setup lang="ts">
+import { Boot } from '@wangeditor/editor'
+import markdownModule from '@wangeditor/plugin-md'
 import '@wangeditor/editor/dist/css/style.css'
 import { IEditorConfig } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
+
+Boot.registerModule(markdownModule)
 
 // 编辑器实例
 const editorRef = shallowRef()
