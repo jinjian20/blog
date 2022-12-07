@@ -1,0 +1,1 @@
+import{s as t}from"./index.bc132317.js";const o=()=>t.get("/category/list"),a=e=>t.post("/category/_token/add",e),s=e=>t.put("/category/_token/update",e),d=e=>t.delete(`/category/_token/delete?id=${e.id}`);export{a,d,s as e,o as g};
