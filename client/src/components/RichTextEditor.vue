@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-15 19:57:48
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-07 21:57:58
+ * @LastEditTime: 2022-12-07 22:29:09
  * @FilePath: /blog/client/src/components/RichEditor.vue
  * @Description: 富文本组件
 -->
@@ -40,13 +40,13 @@ const toolbarConfig = {}
 const editorConfig: Partial<IEditorConfig> = {
   MENU_CONF: {
     'uploadImage': {
-      server: 'http://localhost:8080/upload/rich_editor_upload',
+      server: '/api/upload/rich_editor_upload',
       base64LimitSize: 5 * 1024
     },
     'insertImage': {
       parseImageSrc: (src: string) => {
         if (src.indexOf('http') < 0) {
-          return `http://localhost:8080${src}`
+          return `/api${src}`
         }
         return src
       }
