@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-01 20:44:18
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-05 16:14:33
+ * @LastEditTime: 2022-12-07 10:37:55
  * @FilePath: /blog/client/vite.config.ts
  * @Description: 配置
  */
@@ -10,8 +10,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
-// 可视化查看包大小
-import { visualizer } from 'rollup-plugin-visualizer'
 // gzip压缩
 import viteCompression from 'vite-plugin-compression'
 // 压缩图片
@@ -28,7 +26,6 @@ export default (({ mode }) => {
     },
     plugins: [
       vue(),
-      visualizer(),
       viteCompression(),
       viteImagemin(),
       AutoImport({ 

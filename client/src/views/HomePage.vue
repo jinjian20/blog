@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-22 20:42:20
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-12-05 22:38:01
+ * @LastEditTime: 2022-12-07 12:22:29
  * @FilePath: /blog/client/src/views/HomePage.vue
  * @Description: 首页
 -->
@@ -55,9 +55,9 @@
           />
       </div>
     </div>
-    <!-- <div class="home-footer">
-      footer
-    </div> -->
+    <div class="home-footer">
+      京ICP备2022034121号-1
+    </div>
   </div>
 </template>
 
@@ -218,18 +218,13 @@ const getBlogList = async(query: Page) => {
 
   &-footer {
     position: relative;
-    display: flex;
-    justify-content: space-between;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    line-height: 2;
-    padding: 24px;
-    color: #eee;
-    font-size: 18px;
+    padding: 10px;
     text-align: center;
-    background-color: aqua;
+    background-color: #b9dff9c9;
   }
 }
 
