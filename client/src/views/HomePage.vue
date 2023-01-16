@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-22 20:42:20
  * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2023-01-13 11:17:58
+ * @LastEditTime: 2023-01-16 10:29:42
  * @FilePath: /blog/client/src/views/HomePage.vue
  * @Description: 首页
 -->
@@ -55,9 +55,9 @@
           />
       </div>
     </div>
-    <a href="https://beian.miit.gov.cn/#/Integrated/index" class="home-footer">
+    <p class="home-footer" @click="handlerRouter">
       京ICP备2022034121号-1
-    </a>
+    </p>
   </div>
 </template>
 
@@ -103,6 +103,11 @@ const handleScrollTo = () => {
     'top': PageId.offsetTop,
     'behavior': 'smooth'
   })
+}
+
+// 跳转到备案中心
+const handlerRouter = () => {
+  window.open('https://beian.miit.gov.cn/#/Integrated/index')
 }
 
 // 分页
@@ -221,7 +226,8 @@ const getBlogList = async(query: Page) => {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
+    // width: 100%;
+    cursor: pointer;
     padding: 10px;
     text-align: center;
     background-color: #b9dff9c9;
@@ -242,7 +248,7 @@ const getBlogList = async(query: Page) => {
   to { bottom: 6%; }
 }
 
-a:hover {
-  color: #23a6d5;
-}
+// a:hover {
+//   color: #23a6d5;
+// }
 </style>
