@@ -1,0 +1,1 @@
+import{s as t}from"./index.ddae3d5e.js";const a=e=>t.post("/blog/_token/add",e),g=e=>t.get(`/blog/search?page=${e.page}&pageSize=${e.size}`),d=e=>t.get(`/blog/detail?id=${e.id}`),s=e=>t.delete(`/blog/delete?id=${e.id}`),l=e=>t.put("/blog/_token/update",e);export{a,s as b,d,g,l as u};
