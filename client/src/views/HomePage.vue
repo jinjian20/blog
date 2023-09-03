@@ -2,7 +2,7 @@
  * @Author: jinjian jian.jin3@gientech.com
  * @Date: 2022-11-22 20:42:20
  * @LastEditors: jinjian jian.jin3@gientech.com
- * @LastEditTime: 2023-01-16 10:29:42
+ * @LastEditTime: 2023-08-31 16:26:41
  * @FilePath: /blog/client/src/views/HomePage.vue
  * @Description: 首页
 -->
@@ -23,8 +23,8 @@
       </span>
     </div>
     <div class="home-cantainer" id="down">
-      <div v-for="item in blogList" class="home-cantainer-card">
-          <p class="home-cantainer-card-title" @click="handleToDetail(item.id)">{{ item.title }}</p>
+      <div v-for="item in blogList" class="home-cantainer-card" @click="handleToDetail(item.id)">
+          <n-gradient-text type="warning" :size="32">{{ item.title }}</n-gradient-text>
           <div class="home-cantainer-card-wrap">
             <span class="home-cantainer-card-meta">
               <n-icon :size="12">
@@ -40,25 +40,13 @@
               分类{{ item.category }}
             </span>
           </div>
-          <div class="home-cantainer-card-summary" v-html="item.content">
+          <div class="home-cantainer-card-summary" v-html="item.content"></div>
         </div>
-      </div>
-      <div class="home-cantainer-page">
-        <n-pagination
-            v-model:page="pageInfo.page"
-            v-model:page-size="pageInfo.size"
-            :item-count="count"
-            :page-sizes="[10, 20, 30, 40]"
-            :onUpdatePageSize="handleChange"
-            :onUpdatePage="handleChange"
-            show-size-picker
-          />
       </div>
     </div>
     <p class="home-footer" @click="handlerRouter">
       京ICP备2022034121号-1
     </p>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -110,13 +98,6 @@ const handlerRouter = () => {
   window.open('https://beian.miit.gov.cn/#/Integrated/index')
 }
 
-// 分页
-const handleChange = (pageSize: number, page: number) => {
-  pageInfo.size = pageSize
-  pageInfo.page = page
-  getBlogList(pageInfo)
-}
-
 // 获取blog列表
 const getBlogList = async(query: Page) => {
   try {
@@ -132,7 +113,6 @@ const getBlogList = async(query: Page) => {
 .home {
   width: 100%;
   height: 100%;
-  background-color: #f3f6f7;
 
   &-cover {
     position: absolute;
@@ -165,11 +145,14 @@ const getBlogList = async(query: Page) => {
     flex-direction: column;
     align-items: center;
     padding: 40px 15%;
-    margin: calc(100vh - 10px) auto auto 0px;
+    // margin: calc(100vh - 10px) auto auto 0px;
+    margin: calc(100vh + 20px) auto auto 0px;
+    overflow: auto;
 
     &-card {
       width: 100%;
-      margin-top: 20px;
+      // margin-top: 20px;
+      margin-bottom: 20px;
       text-align: center;
       background-color: #fff;
       border-radius: 8px;
@@ -190,22 +173,20 @@ const getBlogList = async(query: Page) => {
       }
 
       &-summary {
-        font-size: 14px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        -o-text-overflow:ellipsis;
+        display: flex;
+        justify-content: center;
+
+        :only-child {
+          font-size: 14px;
+          color: rgb(66, 144, 247);
+        }
       }
 
       &-meta {
         font-size: 12px;
         color: #333;
-        box-sizing: border-box;
-        line-height: 24px;
-        overflow: hidden;
-        -webkit-line-clamp: 1;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
+        display: flex;
+        align-items: center;
 
         &-divider {
           color: #858585;
